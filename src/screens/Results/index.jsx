@@ -6,7 +6,6 @@ import {
   Divider,
   Heading,
   Icon,
-  ListItem,
   Subtitle,
 } from 'material-bread'
 
@@ -30,7 +29,7 @@ const Results = () => {
     return (
       <View style={screenStyles.listItem}>
         <BodyText>
-          <Icon style={screenStyles.listIcon} size={16} name={isCorrect ? 'check' : 'close'} color={isCorrect ? 'green' : 'red'} />
+          <Icon size={16} name={isCorrect ? 'check' : 'close'} color={isCorrect ? 'green' : 'red'} />
           {`${item.number}. ${item.question}`}
         </BodyText>
         <Subtitle style={screenStyles.listItemAnswer} text={`Correct Answer: ${item.correct_answer}`} />

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useNavigation } from 'react-navigation-hooks'
 import { useSelector } from 'react-redux'
 

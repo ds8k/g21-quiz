@@ -8,9 +8,6 @@ export default StyleSheet.create({
   marginHorizontal: {
     marginHorizontal: 16,
   },
-  paddingHorizontal: {
-    paddingHorizontal: 16,
-  },
   screen: {
     paddingHorizontal: 16,
     backgroundColor: '#f3f6f9',

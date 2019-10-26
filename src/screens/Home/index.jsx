@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { SafeAreaView } from 'react-native'
 import { Button, Heading, Select, Subtitle } from 'material-bread'
 
@@ -15,8 +15,12 @@ const difficultyLevels = [
 ]
 
 const Home = () => {
-  const { onBeginQuizPress, state } = useHomeHooks()
-  const { difficulty, isLoading, setDifficulty } = state
+  const {
+    difficulty,
+    isLoading,
+    onBeginQuizPress, 
+    setDifficulty,
+  } = useHomeHooks()
 
   return (
     <SafeAreaView style={commonStyles.screen}>

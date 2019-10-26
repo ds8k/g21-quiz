@@ -20,30 +20,34 @@ const useHomeHooks = () => {
   const [prevState, setPrevState] = useState(questionsState)
 
   const onBeginQuizPress = () => {
+    // reset stored answers before starting quiz
     dispatch(clearUserAnswers())
+
+    // get new questions
     dispatch(getQuestions({ difficulty: difficulty.id }))
   }
 
   useEffect(() => {
+    // if questions successfully loaded, navigate to quiz
     if (prevState.loading && questionsState.loaded) {
       navigation.navigate(routes.QUIZ)
     }
+
     if (!prevState.error && !!questionsState.error) {
       Alert(
         'Error',
         'An error occurred fetching questions',
       )
     }
+
     setPrevState(questionsState)
   }, [prevState, questionsState, setPrevState])
 
   return {
+    difficulty,
+    isLoading: questionsState.loading,
     onBeginQuizPress,
-    state: {
-      difficulty,
-      isLoading: questionsState.loading,
-      setDifficulty,
-    },
+    setDifficulty,
   }
 }
 

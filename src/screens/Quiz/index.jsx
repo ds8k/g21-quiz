@@ -28,7 +28,7 @@ const Quiz = () => {
         <Heading style={commonStyles.header} type={5} text={category} />
         <Subtitle style={commonStyles.header} type={2} text={`${number} / ${questions.length}`} />
         <Subtitle style={commonStyles.header} type={1} text={question} />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={screenStyles.buttonContainer}>
           <Button
             style={screenStyles.trueButton}
             color="green"

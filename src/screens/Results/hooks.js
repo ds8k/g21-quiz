@@ -16,7 +16,9 @@ const useResultsHooks = () => {
     navigation.navigate(routes.HOME)
   }
 
-  const numberCorrect = answers.reduce((acc, isCorrect) => {
+  const numberCorrect = answers.reduce((acc, answer, index) => {
+    const isCorrect = answer === questions[index].correct_answer
+
     if (isCorrect) return acc + 1
 
     return acc
